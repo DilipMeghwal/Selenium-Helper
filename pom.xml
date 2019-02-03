@@ -31,7 +31,7 @@
 				<configuration>
 					<testFailureIgnore>false</testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>C:\Workspace\seleniumFrameworkJan\src\test\resources\runner\testng.xml</suiteXmlFile>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

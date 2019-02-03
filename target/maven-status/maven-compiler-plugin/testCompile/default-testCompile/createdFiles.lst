@@ -1,0 +1,4 @@
+com\duke\base\testBase.class
+com\duke\utilities\TestUtils.class
+com\duke\testCases\loginIn.class
+com\duke\rough\testProperties.class

@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Data Drivern FW]">
+  <listeners>
+    <listener class-name="com.duke.listeners.customListner"/>
+  </listeners>
+  <test name="LoginTest(failed)">
     <classes>
-      <class name="com.duke.testCases.loginIn">
+      <class name="com.duke.testRunner.TestRunner">
         <methods>
-          <include name="setUp"/>
-          <include name="LoginIn"/>
-          <include name="tearDown"/>
+          <include name="afterSuite"/>
+          <include name="setUpClass"/>
+          <include name="runScenario"/>
+          <include name="beforeSuite"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.duke.testCases.loginIn -->
+      </class> <!-- com.duke.testRunner.TestRunner -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- LoginTest(failed) -->
+</suite> <!-- Failed suite [Data Drivern FW] -->

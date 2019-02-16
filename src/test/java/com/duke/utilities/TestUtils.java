@@ -10,9 +10,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.duke.base.testBase;
+import com.duke.base.BaseClass;
 
-public class TestUtils extends testBase{
+public class TestUtils extends BaseClass{
 	private static TestUtils instance = null;
 	
 	private TestUtils() {

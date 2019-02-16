@@ -2,24 +2,47 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Data Drivern FW" duration-ms="956" started-at="2019-01-25T10:45:27Z" finished-at="2019-01-25T10:45:28Z">
+  <suite name="Data Drivern FW" duration-ms="4635" started-at="2019-02-16T08:07:51Z" finished-at="2019-02-16T08:07:56Z">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test name="LoginTest" duration-ms="956" started-at="2019-01-25T10:45:27Z" finished-at="2019-01-25T10:45:28Z">
-      <class name="com.duke.testCases.loginIn">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.duke.testCases.loginIn@40005471]" name="setUp" is-config="true" duration-ms="14750" started-at="2019-01-25T16:15:12Z" finished-at="2019-01-25T16:15:27Z">
+    <test name="LoginTest" duration-ms="4635" started-at="2019-02-16T08:07:51Z" finished-at="2019-02-16T08:07:56Z">
+      <class name="com.duke.testRunner.TestRunner">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="beforeSuite" is-config="true" duration-ms="12749" started-at="2019-02-16T13:37:39Z" finished-at="2019-02-16T13:37:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginIn()[pri:0, instance:com.duke.testCases.loginIn@40005471]" name="LoginIn" duration-ms="896" started-at="2019-01-25T16:15:27Z" finished-at="2019-01-25T16:15:28Z">
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="setUpClass" is-config="true" duration-ms="551" started-at="2019-02-16T13:37:51Z" finished-at="2019-02-16T13:37:52Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginIn -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.duke.testCases.loginIn@40005471]" name="tearDown" is-config="true" duration-ms="778" started-at="2019-01-25T16:15:28Z" finished-at="2019-01-25T16:15:29Z">
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="runScenario" duration-ms="1842" started-at="2019-02-16T13:37:52Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-02-16T13:37:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.duke.testCases.loginIn -->
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="tearDownClass" is-config="true" duration-ms="2030" started-at="2019-02-16T13:37:54Z" finished-at="2019-02-16T13:37:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.duke.testRunner.TestRunner@25bbe1b6]" name="afterSuite" is-config="true" duration-ms="774" started-at="2019-02-16T13:37:57Z" finished-at="2019-02-16T13:37:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.duke.testRunner.TestRunner -->
     </test> <!-- LoginTest -->
   </suite> <!-- Data Drivern FW -->
 </testng-results>

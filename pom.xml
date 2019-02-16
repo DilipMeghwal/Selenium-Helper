@@ -130,22 +130,13 @@
 			<version>1.72</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>4.2.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java8 -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java8</artifactId>
-			<version>4.2.2</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
-		<!-- <dependency> <groupId>io.cucumber</groupId> <artifactId>cucumber-java8</artifactId> 
-			<version>4.2.2</version> </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
 		<dependency>
@@ -153,10 +144,9 @@
 			<artifactId>gherkin</artifactId>
 			<version>5.1.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 		<!-- <dependency> <groupId>io.cucumber</groupId> <artifactId>cucumber-junit</artifactId> 
 			<version>4.2.2</version> <scope>test</scope> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
+			
 		<!-- <dependency> <groupId>io.cucumber</groupId> <artifactId>cucumber-jvm-deps</artifactId> 
 			<version>1.0.6</version> <scope>provided</scope> </dependency> -->
 
@@ -187,16 +177,18 @@
 			<version>4.4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-		 <dependency>
+		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>4.0.9</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.vimalselvam/cucumber-extentsreport -->
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>
 			<version>3.1.1</version>
-		</dependency> 
+		</dependency>
+
 
 	</dependencies>
 </project>

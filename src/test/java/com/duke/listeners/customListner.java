@@ -2,18 +2,13 @@ package com.duke.listeners;
 
 import java.io.IOException;
 
-import org.testng.IReporter;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
-import org.testng.ITestNGListener;
-import org.testng.ITestNGListenerFactory;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.gherkin.model.Feature;
-import com.aventstack.extentreports.gherkin.model.Given;
 import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -21,7 +16,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.duke.utilities.TestUtils;
 
-public class customListner implements ITestNGListener{
+public class customListner implements ITestListener{
 	public ExtentHtmlReporter htmlReporter;
 	public ExtentReports extent;
 	public ExtentTest logger;
@@ -69,8 +64,8 @@ public class customListner implements ITestNGListener{
 	}
 
 	public void onStart(ITestContext context) {
-
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/MyExtentReport.html");
+		System.out.println("Dilip Meghwal");
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "\\target\\MyExtentReport.html");
 		// Create an object of Extent Reports
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -88,18 +83,6 @@ public class customListner implements ITestNGListener{
 	}
 
 	public void onFinish(ITestContext context) {
-		logger.info("PASSED TEST CASES");
-		context.getPassedTests().getAllResults().forEach(result -> {
-			logger.createNode(Given.class, "Given " + Scenario.getGherkinName())
-			.info(result.getMethod().getMethodName());
-			//logger.info(result.getMethod().getMethodName());
-		});
-
-		logger.info("FAILED TEST CASES");
-		context.getFailedTests().getAllResults().forEach(result -> {
-			logger.info(result.getMethod().getMethodName());
-		});
-
 		logger.info("Test completed on: " + context.getEndDate().toString());
 		extent.flush();
 	}

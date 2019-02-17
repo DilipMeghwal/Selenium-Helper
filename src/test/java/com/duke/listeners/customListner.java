@@ -64,7 +64,6 @@ public class customListner implements ITestListener{
 	}
 
 	public void onStart(ITestContext context) {
-		System.out.println("Dilip Meghwal");
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "\\target\\MyExtentReport.html");
 		// Create an object of Extent Reports
 		extent = new ExtentReports();

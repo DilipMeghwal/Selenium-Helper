@@ -24,6 +24,8 @@ public class HomePage extends BaseClass{
 	public WebElement TEXTBOX_PASSWORD;*/
 	By TEXTBOX_PASSWORD = By.xpath("//input[@name='password']");
 	
+	@FindBy(how=How.XPATH, using = "//input[@name='login']")
+	public WebElement BUTTON_LOGIN;
 	public void checkHomePageOpened() throws Exception{
 		Assert.assertTrue(isElementPresent(TEXTBOX_USERNAME),"Verify Home page opened sucessfully.");
 	}
@@ -34,5 +36,9 @@ public class HomePage extends BaseClass{
 	
 	public void enterPassword(String password) throws Exception {
 		setInputBoxText(TEXTBOX_PASSWORD, password);
+	}
+	
+	public void clickOnLoginButton() {
+		clickOnElement(BUTTON_LOGIN);
 	}
 }

@@ -15,6 +15,6 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 			plugin = {"pretty", "html:target/site/cucumber-pretty",
 		            "json:target/cucumber.json"}
 		)
-public class TestRunner2 extends AbstractTestNGCucumberTests{
+public class TestRunnerJunit extends AbstractTestNGCucumberTests{
 
 }

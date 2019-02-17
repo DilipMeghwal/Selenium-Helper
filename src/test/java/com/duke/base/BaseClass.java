@@ -14,15 +14,6 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class BaseClass {
-	/*
-	 * Webdriver
-	 * properties
-	 * logs - log4j jar, log4j.properrties
-	 * reports
-	 * db
-	 * mail
-	 * excel
-	 */
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
@@ -50,19 +41,16 @@ public class BaseClass {
 				driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
 				log.debug("URL launched " + config.getProperty("testSiteUrl"));
-				System.out.println("Title " + driver.getTitle());
 			}else if(config.getProperty("browser").equals("firefox")){
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
 				driver = new FirefoxDriver();
 				driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
-				System.out.println("Title " + driver.getTitle());
 			}else if(config.getProperty("browser").equals("InternetExplorer")) {
 				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 				driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
-				System.out.println("Title " + driver.getTitle());
 			}
 		}
 	}
@@ -91,13 +79,24 @@ public class BaseClass {
 	
 	public <T> void setInputBoxText (T element, String text) throws Exception{
 		try {
-			System.out.println("Dilip "+element.getClass().getName());
 			if(element.getClass().getName().contains("By")) {
 				driver.findElement((By)element).sendKeys(text);
 			}else{
 				((WebElement)element).sendKeys("mercury");
 			}
 		}catch(Exception e) {
+		}
+	}
+	
+	public <T> void clickOnElement (T element){
+		try {
+			if(element.getClass().getName().contains("By")) {
+				driver.findElement((By)element).click();;
+			}else{
+				((WebElement)element).click();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 	

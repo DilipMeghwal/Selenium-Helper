@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -12,43 +13,53 @@ import org.openqa.selenium.WebDriver;
 
 import com.duke.base.BaseClass;
 
-public class TestUtils extends BaseClass{
+public class TestUtils extends BaseClass {
 	private static TestUtils instance = null;
-	
+
 	private TestUtils() {
-		
+
 	}
-	
+
 	public static TestUtils getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new TestUtils();
 		}
 		return instance;
 	}
-	
+
 	public String projPath = System.getProperty("user.dir");
-	
-	//To capture screenshot
+
+	public HashMap<String,String> getTestDataHashMap(String fileName, String sheetName, String record){
+		HashMap<String,String> testDataHashMap = ExcelUtils.getInstance().readData(fileName, sheetName, record);
+		return testDataHashMap;
+	}
+
+	// To capture screenshot
 	public void captureScreenshotAsJPG(String fileName) throws IOException {
-        TakesScreenshot scrShot =((TakesScreenshot)driver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(projPath + "\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_" + fileName + ".jpg");
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+				+ fileName + ".jpg");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
+
 	public void captureScreenshotAsJPEG(String fileName) throws IOException {
-        TakesScreenshot scrShot =((TakesScreenshot)driver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(projPath + "\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_" + fileName + ".jpeg");
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+				+ fileName + ".jpeg");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
+
 	public void captureScreenshotAsPNG(String fileName) throws IOException {
-        TakesScreenshot scrShot =((TakesScreenshot)driver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        File destFile = new File(projPath + "\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_" + fileName + ".png");
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+				+ fileName + ".png");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
-	
-	//generate time stamp
+
+	// generate time stamp
 	public String getTimeStamp() {
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat f = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss_SSSSSS");

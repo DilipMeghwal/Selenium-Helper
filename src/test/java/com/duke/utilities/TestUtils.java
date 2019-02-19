@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import com.duke.utilities.*;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;

@@ -26,7 +26,10 @@ public class ExcelUtils {
 		}
 		return instance;
 	}
-
+	/*
+	 * This functions is designed to read data from excel and save 
+	 * that data to a hashmap that can be accessed throughout the script
+	 */
 	@SuppressWarnings("resource")
 	public HashMap<String, String> readData(String fileName, String sheetName, String record) {
 		HashMap<String, String> testDataHashMap = new HashMap<String, String>();

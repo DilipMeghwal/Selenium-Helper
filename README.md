@@ -1,2 +1,2 @@
-# Data-Drivern-Framework_1-Selenium
-Data driver framework ceated with Maven, TestNG, BDD, cucumber reports, Log4j2, 
+#BDD_Selenium_TestNG_Maven_CucumberReporting
+Behavioral Driven Development framework ceated with Maven, TestNG, BDD, cucumber reports, Log4j2, 

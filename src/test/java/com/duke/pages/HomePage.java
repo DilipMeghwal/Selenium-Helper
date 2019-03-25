@@ -32,7 +32,8 @@ public class HomePage extends BaseClass{
 	}
 	
 	public void enterUserName(String userName) throws Exception {
-		System.out.println("Step1");
+		TEXTBOX_USERNAME.sendKeys(userName);
+		System.out.println("Step1" );
 		setInputBoxText(TEXTBOX_USERNAME, userName);
 	}
 	

@@ -45,7 +45,7 @@ public class BaseClass {
 				driver = new ChromeDriver(options);*/
 				driver = new ChromeDriver();
 				log.info("Chrome launched");
-				driver.manage().window().maximize();
+				//driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
 				System.out.println("page source" + driver.getPageSource());
 				log.debug("URL launched " + config.getProperty("testSiteUrl"));

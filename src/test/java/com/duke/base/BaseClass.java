@@ -1,5 +1,6 @@
 package com.duke.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -22,6 +23,7 @@ public class BaseClass {
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static String projPath = System.getProperty("user.dir");
+	public static String fileSeperator = System.getenv("file.seperator");
 	public static FileInputStream fis;
 	public static Logger log = LogManager.getLogger(BaseClass.class.getName()); 
 	
@@ -90,9 +92,7 @@ public class BaseClass {
 				if (element.getClass().getName().contains("By")) {
 					driver.findElement((By) element).sendKeys(text);
 				} else {
-					System.out.println("sendkeys before");
 					((WebElement) element).sendKeys("mercury");
-					System.out.println("sendKeys After");
 				}
 			} catch (Exception e) {
 			}

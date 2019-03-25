@@ -26,6 +26,7 @@ public class HomePage extends BaseClass{
 	
 	@FindBy(how=How.XPATH, using = "//input[@name='login']")
 	public WebElement BUTTON_LOGIN;
+	
 	public void checkHomePageOpened() throws Exception{
 		
 		Assert.assertTrue(isElementPresent(TEXTBOX_USERNAME),"Verify Home page opened sucessfully.");
@@ -37,14 +38,9 @@ public class HomePage extends BaseClass{
 	
 	public void enterPassword(String password) throws Exception {
 		setInputBoxText(TEXTBOX_PASSWORD, password);
-		
 	}
 	
 	public void clickOnLoginButton() {
-		System.out.println("Before login");
-		System.out.println(driver.getCurrentUrl());
 		clickOnElement(BUTTON_LOGIN);
-		System.out.println(driver.getCurrentUrl());
-		System.out.println("afterlogin");
 	}
 }

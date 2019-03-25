@@ -36,7 +36,6 @@ public class customListner implements ITestListener{
 	}
 
 	public void onTestFailure(ITestResult result) {
-		// System.setProperty("org.uncommons.reportng.escape-output", "false");
 		logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case FAILED", ExtentColor.RED));
 		try {
 			TestUtils.getInstance().captureScreenshotAsJPG("Failed");

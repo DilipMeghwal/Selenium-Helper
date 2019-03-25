@@ -30,7 +30,6 @@ public class Steps {
 	public void User_enter_username_and_password() throws Exception {
 		POM.getHomePage().enterUserName(testDataHashMap.get("username"));
 		POM.getHomePage().enterPassword(testDataHashMap.get("password"));
-		;
 	}
 
 	@Then("user should be able to login in.")

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Data Drivern FW">
-	<!--<listeners>
+	<!-- <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 		<listener class-name="com.duke.listeners.customListner" /> 
-	</listeners> -->
+	</listeners> 
 	<listeners>
 		<listener class-name="com.duke.listeners.customListner" /> 
-	</listeners>
+	</listeners> -->
 	<test thread-count="5" name="LoginTest">
 		<classes>
 			<class name="com.duke.testRunner.TestRunner" />

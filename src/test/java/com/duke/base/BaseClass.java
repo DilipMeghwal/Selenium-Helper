@@ -38,10 +38,10 @@ public class BaseClass {
 			if(config.getProperty("browser").equals("chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--headless");
-				driver = new ChromeDriver(options);
+				driver = new ChromeDriver();
+				System.out.println("Driver URL ==" + driver.getCurrentUrl());
 				log.info("Chrome launched");
-				//driver.manage().window().maximize();
+				driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
 				log.debug("URL launched " + config.getProperty("testSiteUrl"));
 			}else if(config.getProperty("browser").equals("firefox")){

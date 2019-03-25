@@ -48,6 +48,7 @@ public class BaseClass {
 				//driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
 				System.out.println("page source" + driver.getPageSource());
+				System.out.println(driver.getCurrentUrl() + "====" + driver.getTitle());
 				log.debug("URL launched " + config.getProperty("testSiteUrl"));
 			}else if(config.getProperty("browser").equals("firefox")){
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
@@ -91,7 +92,9 @@ public class BaseClass {
 				if (element.getClass().getName().contains("By")) {
 					driver.findElement((By) element).sendKeys(text);
 				} else {
+					System.out.println("sendkeys before");
 					((WebElement) element).sendKeys("mercury");
+					System.out.println("sendKeys After");
 				}
 			} catch (Exception e) {
 			}

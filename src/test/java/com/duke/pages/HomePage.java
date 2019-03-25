@@ -34,11 +34,14 @@ public class HomePage extends BaseClass{
 	public void enterUserName(String userName) throws Exception {
 		TEXTBOX_USERNAME.sendKeys(userName);
 		System.out.println("Step1" );
-		setInputBoxText(TEXTBOX_USERNAME, userName);
+		//setInputBoxText(TEXTBOX_USERNAME, userName);
 	}
 	
 	public void enterPassword(String password) throws Exception {
+		System.out.println("send keys before by");
 		setInputBoxText(TEXTBOX_PASSWORD, password);
+		System.out.println("send keys after by");
+		
 	}
 	
 	public void clickOnLoginButton() {

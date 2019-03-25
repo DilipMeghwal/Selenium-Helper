@@ -28,14 +28,11 @@ public class HomePage extends BaseClass{
 	public WebElement BUTTON_LOGIN;
 	public void checkHomePageOpened() throws Exception{
 		
-		//Assert.assertTrue(isElementPresent(TEXTBOX_USERNAME),"Verify Home page opened sucessfully.");
+		Assert.assertTrue(isElementPresent(TEXTBOX_USERNAME),"Verify Home page opened sucessfully.");
 	}
 	
 	public void enterUserName(String userName) throws Exception {
-		//TEXTBOX_USERNAME.sendKeys(userName);
-		System.out.println("Step1" );
 		setInputBoxText(TEXTBOX_USERNAME, userName);
-		System.out.println("step2");
 	}
 	
 	public void enterPassword(String password) throws Exception {
@@ -44,6 +41,10 @@ public class HomePage extends BaseClass{
 	}
 	
 	public void clickOnLoginButton() {
+		System.out.println("Before login");
+		System.out.println(driver.getCurrentUrl());
 		clickOnElement(BUTTON_LOGIN);
+		System.out.println(driver.getCurrentUrl());
+		System.out.println("afterlogin");
 	}
 }

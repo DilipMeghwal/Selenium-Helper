@@ -47,9 +47,7 @@ public class BaseClass {
 				log.info("Chrome launched");
 				//driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
-				System.out.println("page source" + driver.getPageSource());
-				System.out.println(driver.getCurrentUrl() + "====" + driver.getTitle());
-				log.debug("URL launched " + config.getProperty("testSiteUrl"));
+				log.debug("URL launched " + driver.getCurrentUrl());
 			}else if(config.getProperty("browser").equals("firefox")){
 				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
 				driver = new FirefoxDriver();

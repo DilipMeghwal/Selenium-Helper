@@ -13,7 +13,7 @@ import com.duke.base.BaseClass;
 public class HomePage extends BaseClass{
 	public WebDriver driver;
 	public HomePage(WebDriver driver) {
-		this.driver = driver;
+		this.driver = BaseClass.getDriver();
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -32,15 +32,14 @@ public class HomePage extends BaseClass{
 	}
 	
 	public void enterUserName(String userName) throws Exception {
-		TEXTBOX_USERNAME.sendKeys(userName);
+		//TEXTBOX_USERNAME.sendKeys(userName);
 		System.out.println("Step1" );
-		//setInputBoxText(TEXTBOX_USERNAME, userName);
+		setInputBoxText(TEXTBOX_USERNAME, userName);
+		System.out.println("step2");
 	}
 	
 	public void enterPassword(String password) throws Exception {
-		System.out.println("send keys before by");
 		setInputBoxText(TEXTBOX_PASSWORD, password);
-		System.out.println("send keys after by");
 		
 	}
 	

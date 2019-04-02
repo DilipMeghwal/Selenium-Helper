@@ -1,13 +1,14 @@
 package com.duke.testRunner;
 
-import java.io.File;
 import java.io.IOException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import com.aventstack.extentreports.gherkin.model.Scenario;
 import com.duke.base.BaseClass;
-import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+
+
 @CucumberOptions(features = { "src/test/resources/features" }, 
 				glue = { "com.duke.stepDefinations"}, 
 				monochrome = true, 
@@ -18,10 +19,12 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 						})
 
 public class TestRunner extends AbstractTestNGCucumberTests{
+	public Scenario scenario;
 	@BeforeSuite
 	public void beforeSuite() throws IOException {
 		BaseClass.setUp();
 	}
+	
 	
 	@AfterSuite
 	public void afterSuite() {

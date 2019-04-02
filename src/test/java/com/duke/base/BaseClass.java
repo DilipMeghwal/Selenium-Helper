@@ -1,6 +1,5 @@
 package com.duke.base;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -10,14 +9,20 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.duke.utilities.TestUtils;
+
+import cucumber.api.java.After;
+import cucumber.api.java.AfterStep;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 public class BaseClass {
 	public static WebDriver driver;
 	public static Properties config = new Properties();
@@ -30,6 +35,8 @@ public class BaseClass {
 	public static WebDriver getDriver() {
 		return driver;
 	}
+	
+	
 	public static void setUp() throws IOException {
 		if(driver == null) {
 			fis = new FileInputStream(projPath + "\\src\\test\\resources\\properties\\config.properties");
@@ -72,7 +79,7 @@ public class BaseClass {
 	}
 	
 	// to check element is present or not
-		public <T> boolean isElementPresent(T element) throws Exception {
+		public <T> boolean isElementPresent(T element){
 			try {
 				if (element.getClass().getName().contains("By")) {
 					driver.findElement((By) element).isDisplayed();
@@ -82,19 +89,21 @@ public class BaseClass {
 					return true;
 				}
 			} catch (Exception e) {
-				return false;
+				e.printStackTrace();
 			}
+			return false;
 		}
 
 		// Set Test to inutBox
-		public <T> void setInputBoxText(T element, String text) throws Exception {
+		public <T> void setInputBoxText(T element, String text){
 			try {
 				if (element.getClass().getName().contains("By")) {
 					driver.findElement((By) element).sendKeys(text);
 				} else {
-					((WebElement) element).sendKeys("mercury");
+					((WebElement) element).sendKeys(text);
 				}
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 

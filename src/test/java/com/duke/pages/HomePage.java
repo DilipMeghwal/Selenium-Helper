@@ -17,30 +17,42 @@ public class HomePage extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(how=How.XPATH, using="//input[@name='userName']")
+	@FindBy(how=How.XPATH, using="//input[@name='username']")
 	public WebElement TEXTBOX_USERNAME;
 	
 	/*@FindBy(xpath="//input[@name='password']")
 	public WebElement TEXTBOX_PASSWORD;*/
 	By TEXTBOX_PASSWORD = By.xpath("//input[@name='password']");
 	
-	@FindBy(how=How.XPATH, using = "//input[@name='login']")
+	@FindBy(how=How.XPATH, using = "//input[@value='Log In']")
 	public WebElement BUTTON_LOGIN;
 	
-	public void checkHomePageOpened() throws Exception{
+	@FindBy(how=How.XPATH, using = "//*[@id='leftPanel']//a[contains(.,'Log Out')]")
+	public WebElement LOGOUT_BUTTON;
+	
+	public void checkHomePageOpened(){
 		
 		Assert.assertTrue(isElementPresent(TEXTBOX_USERNAME),"Verify Home page opened sucessfully.");
 	}
 	
-	public void enterUserName(String userName) throws Exception {
+	public void enterUserName(String userName){
 		setInputBoxText(TEXTBOX_USERNAME, userName);
 	}
 	
-	public void enterPassword(String password) throws Exception {
+	public void enterPassword(String password){
 		setInputBoxText(TEXTBOX_PASSWORD, password);
 	}
 	
 	public void clickOnLoginButton() {
 		clickOnElement(BUTTON_LOGIN);
+	}
+	
+	public void verifyLoginSucessfull(){
+		try {
+			Assert.assertTrue(isElementPresent(LOGOUT_BUTTON), "Verify user should be able to login in.");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -1,0 +1,11 @@
+2020-07-23 18:22:53.256 INFO [main] [com.duke.base.BaseClass] [setUp] [com.duke.base.BaseClass.setUp(BaseClass.java:44)] - config file loaded
+2020-07-23 18:22:53.265 INFO [main] [com.duke.base.BaseClass] [setUp] [com.duke.base.BaseClass.setUp(BaseClass.java:47)] - OR file loaded
+2020-07-23 18:22:57.996 INFO [main] [com.duke.base.BaseClass] [setUp] [com.duke.base.BaseClass.setUp(BaseClass.java:56)] - Chrome launched
+2020-07-23 18:23:04.571 DEBUG [main] [com.duke.base.BaseClass] [setUp] [com.duke.base.BaseClass.setUp(BaseClass.java:59)] - URL launched https://parabank.parasoft.com/parabank/index.htm
+2020-07-23 18:23:06.325 INFO [main] [com.duke.base.BaseClass] [read_test_data_from_file_from_sheet_for_user] [com.duke.stepDefinations.Steps.read_test_data_from_file_from_sheet_for_user(Steps.java:25)] - Test Data Read successfull
+2020-07-23 18:23:06.556 INFO [main] [com.duke.base.BaseClass] [user_is_on_landing_page] [com.duke.stepDefinations.Steps.user_is_on_landing_page(Steps.java:31)] - Home Page Opened Sucessfully
+2020-07-23 18:23:06.663 INFO [main] [com.duke.base.BaseClass] [User_enter_username_and_password] [com.duke.stepDefinations.Steps.User_enter_username_and_password(Steps.java:37)] - Username entered successfully
+2020-07-23 18:23:06.836 INFO [main] [com.duke.base.BaseClass] [User_enter_username_and_password] [com.duke.stepDefinations.Steps.User_enter_username_and_password(Steps.java:39)] - Password entered successfully
+2020-07-23 18:23:08.706 INFO [main] [com.duke.base.BaseClass] [Click_on_login_button] [com.duke.stepDefinations.Steps.Click_on_login_button(Steps.java:45)] - Log In button clicked successfully
+2020-07-23 18:23:08.763 INFO [main] [com.duke.base.BaseClass] [Verify_user_should_be_able_to_login_in] [com.duke.stepDefinations.Steps.Verify_user_should_be_able_to_login_in(Steps.java:51)] - Usesr successfully Logged In
+2020-07-23 18:23:10.467 DEBUG [main] [com.duke.base.BaseClass] [tearDown] [com.duke.base.BaseClass.tearDown(BaseClass.java:77)] - driver closed

@@ -46,7 +46,7 @@ public class ExcelUtils {
 			Sheet sheet = workbook.getSheet(sheetName);
 			List<String> columnNames = new ArrayList<String>();
 			List<String> rowData = new ArrayList<String>();
-			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+			for (int i = 0; i <= sheet.getLastRowNum(); i++) {
 				Cell cell = sheet.getRow(i).getCell(0);
 				if (sheet.getTopRow() == 0 && columnNames.isEmpty() == true) {
 					columnNames = getRowValues(sheet, 0);

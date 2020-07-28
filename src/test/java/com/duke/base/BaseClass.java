@@ -3,7 +3,6 @@ package com.duke.base;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,30 +13,25 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.duke.utilities.TestUtils;
-
-import cucumber.api.java.After;
-import cucumber.api.java.AfterStep;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BaseClass {
-	public static WebDriver driver;
-	public static Properties config = new Properties();
-	public static Properties OR = new Properties();
-	public static String projPath = System.getProperty("user.dir");
-	public static String fileSeperator = System.getenv("file.seperator");
-	public static FileInputStream fis;
-	public static Logger log = LogManager.getLogger(BaseClass.class.getName()); 
-	
-	public static WebDriver getDriver() {
+	public  WebDriver driver;
+	public  Properties config = new Properties();
+	public  Properties OR = new Properties();
+	public  String projPath = System.getProperty("user.dir");
+	public  String fileSeperator = System.getenv("file.seperator");
+	public  FileInputStream fis;
+	public  Logger log = LogManager.getLogger(BaseClass.class.getName()); 
+
+
+	public  WebDriver getDriver() {
 		return driver;
 	}
 	
 	
-	public static void setUp() throws IOException {
+	public  void setUp() throws IOException {
 		if(driver == null) {
 			fis = new FileInputStream(projPath + "\\src\\test\\resources\\properties\\config.properties");
 			config.load(fis);
@@ -71,7 +65,7 @@ public class BaseClass {
 		}
 	}
 	
-	public static void tearDown() {
+	public  void tearDown() throws IOException {
 		if(driver != null) {
 			driver.quit();
 			log.debug("driver closed");
@@ -123,7 +117,7 @@ public class BaseClass {
 		// Hover over element
 		public <T> void mouseOverOnElement(T element) {
 			try {
-				Actions action = new Actions(BaseClass.getDriver());
+				Actions action = new Actions(driver);
 				if (element.getClass().getName().contains("By")) {
 					action.moveToElement(driver.findElement((By) element)).build().perform();
 				} else {
@@ -151,7 +145,7 @@ public class BaseClass {
 		// click using JAvascript exec
 		public <T> void clickOnElementUsingJS(T element) {
 			try {
-				JavascriptExecutor jsExe = (JavascriptExecutor) BaseClass.getDriver();
+				JavascriptExecutor jsExe = (JavascriptExecutor) driver;
 				if (element.getClass().getName().contains("By")) {
 					jsExe.executeScript("arguments[0].click();", driver.findElement((By) element));
 				} else {

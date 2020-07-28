@@ -22,13 +22,13 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 	public Scenario scenario;
 	@BeforeSuite
 	public void beforeSuite() throws IOException {
-		BaseClass.setUp();
+		//BaseClass.setUp();
 	}
 	
 	
 	@AfterSuite
 	public void afterSuite() {
-		BaseClass.tearDown();
+		//BaseClass.tearDown();
 		/*Reporter.loadXMLConfig(new File("src\\test\\resources\\extent-config.xml"));
 		Reporter.setSystemInfo("user", System.getProperty("user.name"));
 		Reporter.setSystemInfo("os", "Mac OSX");

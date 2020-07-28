@@ -13,19 +13,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
-	private static ExcelUtils instance = null;
+	private  ExcelUtils instance = null;
 	private String projPath = System.getProperty("user.dir");
 
-	private ExcelUtils() {
-
-	}
-
-	public static ExcelUtils getInstance() {
-		if (instance == null) {
-			instance = new ExcelUtils();
-		}
-		return instance;
-	}
 	/*
 	 * This functions is designed to read data from excel and save 
 	 * that data to a hashmap that can be accessed throughout the script
@@ -55,7 +45,7 @@ public class ExcelUtils {
 				}
 			}
 			for (int i = 0; i < columnNames.size(); i++) {
-				//System.out.println("Key " + columnNames.get(i) + " Value " + rowData.get(i));
+				System.out.println("Key " + columnNames.get(i) + " Value " + rowData.get(i));
 				testDataHashMap.put(columnNames.get(i), rowData.get(i));
 			}
 		} catch (Exception e) {

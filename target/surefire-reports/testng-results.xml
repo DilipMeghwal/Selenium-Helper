@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Data Drivern FW" duration-ms="4241" started-at="2020-07-23T12:53:04Z" finished-at="2020-07-23T12:53:08Z">
+  <suite name="Data Drivern FW" duration-ms="20157" started-at="2020-07-28T09:04:23Z" finished-at="2020-07-28T09:04:44Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="LoginTest" duration-ms="4241" started-at="2020-07-23T12:53:04Z" finished-at="2020-07-23T12:53:08Z">
-      <class name="com.duke.testRunner.TestRunner">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="beforeSuite" is-config="true" duration-ms="12162" started-at="2020-07-23T12:52:52Z" finished-at="2020-07-23T12:53:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="setUpClass" is-config="true" duration-ms="159" started-at="2020-07-23T12:53:04Z" finished-at="2020-07-23T12:53:04Z">
+    <test name="LoginTest" duration-ms="20157" started-at="2020-07-28T09:04:23Z" finished-at="2020-07-28T09:04:44Z">
+      <class name="com.duke.testRunner.TestRunnerParallelExecution">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="setUpClass" is-config="true" duration-ms="211" started-at="2020-07-28T09:04:23Z" finished-at="2020-07-28T09:04:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="runScenario" duration-ms="3958" started-at="2020-07-23T12:53:04Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-23T12:53:08Z">
+        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="runScenario" duration-ms="18832" started-at="2020-07-28T09:04:24Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-28T09:04:43Z">
           <params>
             <param index="0">
               <value>
@@ -34,15 +30,43 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="tearDownClass" is-config="true" duration-ms="46" started-at="2020-07-23T12:53:08Z" finished-at="2020-07-23T12:53:08Z">
+        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="runScenario" duration-ms="18646" started-at="2020-07-28T09:04:24Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-28T09:04:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="runScenario" duration-ms="19677" started-at="2020-07-28T09:04:24Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-28T09:04:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["verify Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@51565ec2]" name="tearDownClass" is-config="true" duration-ms="175" started-at="2020-07-28T09:04:43Z" finished-at="2020-07-28T09:04:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.duke.testRunner.TestRunner@1593948d]" name="afterSuite" is-config="true" duration-ms="1627" started-at="2020-07-23T12:53:08Z" finished-at="2020-07-23T12:53:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- com.duke.testRunner.TestRunner -->
+      </class> <!-- com.duke.testRunner.TestRunnerParallelExecution -->
     </test> <!-- LoginTest -->
   </suite> <!-- Data Drivern FW -->
 </testng-results>

@@ -14,32 +14,21 @@ import org.openqa.selenium.WebDriver;
 
 import com.duke.base.BaseClass;
 
-public class TestUtils extends BaseClass {
-	private static TestUtils instance = null;
-
-	private TestUtils() {
-
-	}
-
-	public static TestUtils getInstance() {
-		if (instance == null) {
-			instance = new TestUtils();
-		}
-		return instance;
-	}
+public class TestUtils extends ExcelUtils {
+	private  TestUtils instance = null;
 
 	public String projPath = System.getProperty("user.dir");
 
 	public HashMap<String,String> getTestDataHashMap(String fileName, String sheetName, String record){
-		HashMap<String,String> testDataHashMap = ExcelUtils.getInstance().readData(fileName, sheetName, record);
+		HashMap<String,String> testDataHashMap = readData(fileName, sheetName, record);
 		return testDataHashMap;
 	}
 
 	// To capture screenshot
-	public void captureScreenshotAsJPG(String fileName) throws IOException {
+	/*public void captureScreenshotAsJPG(String fileName) throws IOException {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+		File destFile = new File(projPath + "\\target\\screenShots\\" + getTimeStamp() + "_"
 				+ fileName + ".jpg");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
@@ -47,7 +36,7 @@ public class TestUtils extends BaseClass {
 	public void captureScreenshotAsJPEG(String fileName) throws IOException {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+		File destFile = new File(projPath + "\\target\\screenShots\\" + getTimeStamp() + "_"
 				+ fileName + ".jpeg");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
@@ -55,7 +44,7 @@ public class TestUtils extends BaseClass {
 	public void captureScreenshotAsPNG(String fileName) throws IOException {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File destFile = new File(projPath + "\\target\\screenShots\\" + TestUtils.getInstance().getTimeStamp() + "_"
+		File destFile = new File(projPath + "\\target\\screenShots\\" + getTimeStamp() + "_"
 				+ fileName + ".png");
 		FileUtils.copyFile(SrcFile, destFile);
 	}
@@ -66,5 +55,5 @@ public class TestUtils extends BaseClass {
 		SimpleDateFormat f = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss_SSSSSS");
 		String timeStamp = f.format(cal.getTime());
 		return timeStamp;
-	}
+	}*/
 }

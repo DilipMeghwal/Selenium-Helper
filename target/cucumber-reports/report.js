@@ -7,11 +7,20 @@ formatter.feature({
 formatter.scenarioOutline({
   "name": "verify Login",
   "description": "",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@Login"
+    }
+  ]
 });
 formatter.step({
   "name": "User is on landing page.",
   "keyword": "Given "
+});
+formatter.step({
+  "name": "Read test data from \"testData.xlsx\" from \"sheet1\" for \"\u003cuser\u003e\".",
+  "keyword": "And "
 });
 formatter.step({
   "name": "User enter username and password.",
@@ -37,22 +46,40 @@ formatter.examples({
     },
     {
       "cells": [
-        "user0"
+        "user1"
+      ]
+    },
+    {
+      "cells": [
+        "user2"
+      ]
+    },
+    {
+      "cells": [
+        "user3"
       ]
     }
   ]
 });
-formatter.background({
-  "name": "",
+formatter.scenario({
+  "name": "verify Login",
   "description": "",
-  "keyword": "Background"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
-  "name": "Read test data from \"testData.xlsx\" from \"sheet1\" for \"user0\".",
+  "name": "User is on landing page.",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Steps.read_test_data_from_file_from_sheet_for_user(String,String,String)"
+  "location": "LoginSteps.user_is_on_landing_page()"
 });
 formatter.result({
   "status": "passed"
@@ -60,17 +87,12 @@ formatter.result({
 formatter.afterstep({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "verify Login",
-  "description": "",
-  "keyword": "Scenario Outline"
-});
 formatter.step({
-  "name": "User is on landing page.",
-  "keyword": "Given "
+  "name": "Read test data from \"testData.xlsx\" from \"sheet1\" for \"user1\".",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "Steps.user_is_on_landing_page()"
+  "location": "LoginSteps.read_test_data_from_from_for(String,String,String)"
 });
 formatter.result({
   "status": "passed"
@@ -83,7 +105,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.match({
-  "location": "Steps.User_enter_username_and_password()"
+  "location": "LoginSteps.User_enter_username_and_password()"
 });
 formatter.result({
   "status": "passed"
@@ -96,7 +118,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "Steps.Click_on_login_button()"
+  "location": "LoginSteps.Click_on_login_button()"
 });
 formatter.result({
   "status": "passed"
@@ -109,12 +131,177 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "Steps.Verify_user_should_be_able_to_login_in()"
+  "location": "AccountOverviewSteps.verify_user_should_be_able_to_login_in()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.afterstep({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "verify Login",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User is on landing page.",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "LoginSteps.user_is_on_landing_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Read test data from \"testData.xlsx\" from \"sheet1\" for \"user2\".",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginSteps.read_test_data_from_from_for(String,String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User enter username and password.",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "LoginSteps.User_enter_username_and_password()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on login button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginSteps.Click_on_login_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify user should be able to login in.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "AccountOverviewSteps.verify_user_should_be_able_to_login_in()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "verify Login",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@Login"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User is on landing page.",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "LoginSteps.user_is_on_landing_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Read test data from \"testData.xlsx\" from \"sheet1\" for \"user3\".",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginSteps.read_test_data_from_from_for(String,String,String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User enter username and password.",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "LoginSteps.User_enter_username_and_password()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Click on login button.",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "LoginSteps.Click_on_login_button()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Verify user should be able to login in.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "AccountOverviewSteps.verify_user_should_be_able_to_login_in()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.afterstep({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });

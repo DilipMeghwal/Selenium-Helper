@@ -11,7 +11,8 @@
 	</listeners> -->
 	<test thread-count="5" name="LoginTest">
 		<classes>
-			<class name="com.duke.testRunner.TestRunner" />
+			<!-- class name="com.duke.testRunner.TestRunner" / -->
+			<class name="com.duke.testRunner.TestRunnerParallelExecution" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

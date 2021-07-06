@@ -12,7 +12,7 @@ Feature: Verify Account Overview
     Examples: 
       | user  |
       | user3 |
-
+	@Test
   Scenario Outline: Verify user is able to logout sucessfully
     Given User is on landing page.
     And Read test data from "testData.xlsx" from "sheet1" for "user4".

@@ -13,6 +13,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				glue = { "com.duke.stepDefinations"}, 
 				monochrome = true, 
 				strict = true, 
+				tags = {"~@Parallel"},
 				plugin = { "pretty", "html:target/cucumber-reports",
 						"json:target/cucumber.json",
 						//"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:output/report.html"

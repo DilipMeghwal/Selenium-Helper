@@ -40,7 +40,7 @@ public class AccountOverviewPage extends BaseClass{
 	
 	public void VerifyLogOutSucessfull() {
 		try {
-			clickOnElement(LOGOUT_BUTTON);
+			//clickOnElement(LOGOUT_BUTTON);
 			Assert.assertFalse(isElementPresent(LOGOUT_BUTTON), "Verify user successfully logged out.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

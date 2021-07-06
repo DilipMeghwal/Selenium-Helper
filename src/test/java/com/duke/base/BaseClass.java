@@ -48,7 +48,7 @@ public class BaseClass {
 				driver = new ChromeDriver(options);*/
 				driver = new ChromeDriver();
 				log.info("Chrome launched");
-				//driver.manage().window().maximize();
+				driver.manage().window().maximize();
 				driver.get(config.getProperty("testSiteUrl"));
 				log.debug("URL launched " + driver.getCurrentUrl());
 			}else if(config.getProperty("browser").equals("firefox")){

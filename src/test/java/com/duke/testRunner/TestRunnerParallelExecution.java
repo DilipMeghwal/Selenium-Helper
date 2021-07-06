@@ -11,7 +11,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 				monochrome = true, 
 				strict = true, 
 				//dryRun = true,
-				tags = {"@Login"},
+				tags = {"@Parallel"},
 				plugin = { "pretty", "html:target/cucumber-reports",
 						"json:target/cucumber.json",
 						//"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:output/report.html"

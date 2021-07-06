@@ -13,6 +13,8 @@
 		<classes>
 			<!-- class name="com.duke.testRunner.TestRunner" / -->
 			<class name="com.duke.testRunner.TestRunnerParallelExecution" />
+			<class name="com.duke.testRunner.TestRunner" />
+			
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

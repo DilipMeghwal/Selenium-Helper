@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import com.duke.base.BaseClass;
 import com.duke.pageObjectManager.PageObjectManager;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 
 public class AccountOverviewSteps extends BaseClass{
 	public BaseClass baseClass;
@@ -18,8 +18,8 @@ public class AccountOverviewSteps extends BaseClass{
 	
 	PageObjectManager POM = new PageObjectManager();
 	
-	@And("User logged in sucessfully")
-	public void user_logged_in_sucessfully() {
+	@And("User logged in successfully")
+	public void user_logged_in_successfully() {
 		POM.getAccountOverviewPage(driver).verifyLoginSucessfull();
 	}
 	
@@ -35,8 +35,8 @@ public class AccountOverviewSteps extends BaseClass{
 		//BaseClass.log.info("Usesr successfully Logged In");
 	}
 	
-	@Then ("Verify user is able to logout sucessfully.")
-	public void verify_user_is_able_to_logout_sucessfully() {
+	@Then ("Verify user is able to logout successfully.")
+	public void verify_user_is_able_to_logout_successfully() {
 		POM.getAccountOverviewPage(driver).VerifyLogOutSucessfull();
 	}
 }

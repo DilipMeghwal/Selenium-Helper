@@ -8,9 +8,9 @@ import com.duke.base.BaseClass;
 import com.duke.pageObjectManager.PageObjectManager;
 import com.duke.utilities.CustomExceptions;
 import com.duke.utilities.TestUtils;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class LoginSteps extends BaseClass{
 

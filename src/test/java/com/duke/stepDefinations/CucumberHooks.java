@@ -7,10 +7,10 @@ import org.openqa.selenium.TakesScreenshot;
 
 import com.duke.base.BaseClass;
 import com.duke.pageObjectManager.PageObjectManager;
-
-import cucumber.api.java.After;
-import cucumber.api.java.AfterStep;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class CucumberHooks {
 	
@@ -30,13 +30,13 @@ public class CucumberHooks {
 	public void afterSuite() throws IOException {
 		baseClass.tearDown();
 	}
-	
+
 	@AfterStep
-	public void afterTest(cucumber.api.Scenario scenario) {
+	public void afterTest(Scenario scenario) {
 		if(scenario.isFailed()) {
 			TakesScreenshot scrShot = ((TakesScreenshot) baseClass.getDriver());
 			byte[] SrcFile = scrShot.getScreenshotAs(OutputType.BYTES);
-			scenario.embed(SrcFile, "image/png" + System.currentTimeMillis());
+			scenario.attach(SrcFile, "image/png", "image/png" + System.currentTimeMillis());
 		}
 	}
 }

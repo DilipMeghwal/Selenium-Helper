@@ -1,4 +1,4 @@
-package com.duke.utilities;
+package utilities;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;

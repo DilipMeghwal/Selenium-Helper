@@ -5,16 +5,16 @@
   <suite name="Data Drivern FW" duration-ms="800" started-at="2020-07-24T13:10:45Z" finished-at="2020-07-24T13:10:46Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
     <test name="LoginTest" duration-ms="800" started-at="2020-07-24T13:10:45Z" finished-at="2020-07-24T13:10:46Z">
-      <class name="com.duke.testRunner.TestRunnerParallelExecution">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="setUpClass" is-config="true" duration-ms="243" started-at="2020-07-24T13:10:45Z" finished-at="2020-07-24T13:10:45Z">
+      <class name="testRunner.TestRunnerParallelExecution">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="setUpClass" is-config="true" duration-ms="243" started-at="2020-07-24T13:10:45Z" finished-at="2020-07-24T13:10:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="380" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="380" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
           <params>
             <param index="0">
               <value>
@@ -79,7 +79,7 @@ at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="377" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="377" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
           <params>
             <param index="0">
               <value>
@@ -144,7 +144,7 @@ at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="377" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="377" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
           <params>
             <param index="0">
               <value>
@@ -209,7 +209,7 @@ at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="376" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="runScenario" duration-ms="376" started-at="2020-07-24T13:10:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2020-07-24T13:10:46Z">
           <params>
             <param index="0">
               <value>
@@ -274,11 +274,11 @@ at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.duke.testRunner.TestRunnerParallelExecution@5ce81285]" name="tearDownClass" is-config="true" duration-ms="24" started-at="2020-07-24T13:10:46Z" finished-at="2020-07-24T13:10:46Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:testRunner.TestRunnerParallelExecution@5ce81285]" name="tearDownClass" is-config="true" duration-ms="24" started-at="2020-07-24T13:10:46Z" finished-at="2020-07-24T13:10:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.duke.testRunner.TestRunnerParallelExecution -->
+      </class> <!-- testRunner.TestRunnerParallelExecution -->
     </test> <!-- LoginTest -->
   </suite> <!-- Data Drivern FW -->
 </testng-results>

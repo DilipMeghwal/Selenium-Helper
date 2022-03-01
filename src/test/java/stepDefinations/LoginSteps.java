@@ -1,13 +1,13 @@
-package com.duke.stepDefinations;
+package stepDefinations;
 
 import java.io.IOException;
 import java.util.HashMap;
 import org.openqa.selenium.WebDriver;
 
-import com.duke.base.BaseClass;
-import com.duke.pageObjectManager.PageObjectManager;
-import com.duke.utilities.CustomExceptions;
-import com.duke.utilities.TestUtils;
+import base.BaseClass;
+import pageObjectManager.PageObjectManager;
+import utilities.CustomExceptions;
+import utilities.TestUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

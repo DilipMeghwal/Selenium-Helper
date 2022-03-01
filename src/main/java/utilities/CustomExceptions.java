@@ -1,4 +1,4 @@
-package com.duke.utilities;
+package utilities;
 
 public class CustomExceptions extends Exception{
 	

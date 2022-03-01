@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Data Drivern FW">
-	<test thread-count="5" name="LoginTest">
+	<test thread-count="5" name="Test on chrome">
+		<parameter name="browserName" value="chrome"/>
 		<classes>
-			<class name="com.duke.testRunner.TestRunnerParallelExecution" />
+			<class name="testRunner.TestRunnerParallelExecution" />
 		</classes>
-	</test> <!-- Test -->
+	</test>
+	<test thread-count="5" name="Test on safari">
+		<parameter name="browserName" value="safari"/>
+		<classes>
+			<class name="testRunner.TestRunnerParallelExecution" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->

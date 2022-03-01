@@ -1,72 +1,98 @@
-package com.duke.base;
+package base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.Reporter;
+import org.testng.SkipException;
 
 public class BaseClass {
-	public  WebDriver driver;
-	public  Properties config = new Properties();
-	public  Properties OR = new Properties();
-	public  String projPath = System.getProperty("user.dir");
-	public  String fileSeperator = System.getenv("file.seperator");
-	public  FileInputStream fis;
-	public  Logger log = LogManager.getLogger(BaseClass.class.getName()); 
+	public WebDriver driver;
+	public Properties config = new Properties();
+	public String projPath = System.getProperty("user.dir");
+	public String fileSeparator = File.separator;
+	public FileInputStream fis;
+	public Logger log = LogManager.getLogger(BaseClass.class.getName());
+	public String osName = System.getProperty("os.name").toLowerCase();
 
-
-	public  WebDriver getDriver() {
+	public WebDriver getDriver() {
 		return driver;
 	}
-	
-	
-	public  void setUp() throws IOException {
-		if(driver == null) {
-			fis = new FileInputStream(projPath + "\\src\\test\\resources\\properties\\config.properties");
+
+
+	public void setUp() throws IOException {
+		if (driver == null) {
+			fis = new FileInputStream(projPath + fileSeparator + "src" + fileSeparator + "test" + fileSeparator + "resources" + fileSeparator + "properties" + fileSeparator + "config.properties");
 			config.load(fis);
 			log.info("config file loaded");
-			fis = new FileInputStream(projPath + "\\src\\test\\resources\\properties\\OR.properties");
-			OR.load(fis);
-			log.info("OR file loaded");
-			
+			String browserName = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browserName");
+
 			//select browser
-			if(config.getProperty("browser").equals("chrome")) {
-				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
-				/*ChromeOptions options = new ChromeOptions();
-				options.addArguments("--headless");
-				driver = new ChromeDriver(options);*/
-				driver = new ChromeDriver();
-				log.info("Chrome launched");
-				driver.manage().window().maximize();
-				driver.get(config.getProperty("testSiteUrl"));
-				log.debug("URL launched " + driver.getCurrentUrl());
-			}else if(config.getProperty("browser").equals("firefox")){
-				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
-				driver = new FirefoxDriver();
-				driver.manage().window().maximize();
-				driver.get(config.getProperty("testSiteUrl"));
-			}else if(config.getProperty("browser").equals("InternetExplorer")) {
-				System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
-				driver = new InternetExplorerDriver();
-				driver.manage().window().maximize();
-				driver.get(config.getProperty("testSiteUrl"));
+			if (osName.contains("mac")) {
+				if (browserName.equals("chrome")) {
+					WebDriverManager.chromedriver().setup();
+					driver = new ChromeDriver();
+					log.info("Chrome launched");
+					driver.manage().window().maximize();
+					driver.get(config.getProperty("testSiteUrl"));
+					log.debug("URL launched " + driver.getCurrentUrl());
+				} else if (browserName.equals("safari")) {
+					driver = new SafariDriver();
+					log.info("Safari launched");
+					driver.manage().window().maximize();
+					driver.get(config.getProperty("testSiteUrl"));
+					log.debug("URL launched " + driver.getCurrentUrl());
+				}
+			} else if (osName.contains("windows")) {
+				if (browserName.equals("chrome")) {
+					WebDriverManager.chromedriver().setup();
+					//System.setProperty("webdriver.chrome.driver", projPath + fileSeparator + "src" + fileSeparator + "test" + fileSeparator + "resources" + fileSeparator + "executables" + fileSeparator + "chromedriver.exe");
+					ChromeOptions options = new ChromeOptions();
+					//options.addArguments("--headless");
+					driver = new ChromeDriver(options);
+					log.info("Chrome launched");
+					driver.manage().window().maximize();
+					driver.get(config.getProperty("testSiteUrl"));
+					log.debug("URL launched " + driver.getCurrentUrl());
+				} else if (browserName.equals("safari")) {
+					throw new SkipException("Skipping the run on safari on windows as its not supported");
+				}
+			} else if (osName.contains("linux")) {
+				if (browserName.equals("chrome")) {
+					WebDriverManager.chromedriver().setup();
+					//System.setProperty("webdriver.chrome.driver", projPath + fileSeparator + "src" + fileSeparator + "test" + fileSeparator + "resources" + fileSeparator + "executables" + fileSeparator + "chromedriver");
+					ChromeOptions options = new ChromeOptions();
+					options.addArguments("--headless");
+					driver = new ChromeDriver(options);
+					log.info("Chrome launched");
+					driver.manage().window().maximize();
+					driver.get(config.getProperty("testSiteUrl"));
+					log.debug("URL launched " + driver.getCurrentUrl());
+				} else if (browserName.equals("safari")) {
+					throw new SkipException("Skipping the run on safari on linux as its not supported");
+				}
 			}
+
 		}
 	}
-	
-	public  void tearDown() throws IOException {
-		if(driver != null) {
+
+	public void tearDown() throws IOException {
+		if (driver != null) {
 			driver.quit();
 			log.debug("driver closed");
 		}

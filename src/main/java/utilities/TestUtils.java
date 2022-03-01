@@ -1,18 +1,6 @@
-package com.duke.utilities;
+package utilities;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.HashMap;
-import com.duke.utilities.*;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-
-import com.duke.base.BaseClass;
 
 public class TestUtils extends ExcelUtils {
 	private  TestUtils instance = null;

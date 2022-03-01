@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.duke.testRunner.TestRunnerParallelExecution">
+      <class name="testRunner.TestRunnerParallelExecution">
         <methods>
           <include name="setUpClass"/>
           <include name="runScenario" invocation-numbers="2 3 0 1"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- com.duke.testRunner.TestRunnerParallelExecution -->
+      </class> <!-- testRunner.TestRunnerParallelExecution -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

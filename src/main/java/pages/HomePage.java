@@ -1,4 +1,4 @@
-package com.duke.pages;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.duke.base.BaseClass;
+import base.BaseClass;
 
 public class HomePage extends BaseClass{
 	private WebDriver driver;

@@ -1,9 +1,9 @@
-package com.duke.stepDefinations;
+package stepDefinations;
 
 import org.openqa.selenium.WebDriver;
 
-import com.duke.base.BaseClass;
-import com.duke.pageObjectManager.PageObjectManager;
+import base.BaseClass;
+import pageObjectManager.PageObjectManager;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

@@ -1,9 +1,9 @@
-package com.duke.pageObjectManager;
+package pageObjectManager;
 
 import org.openqa.selenium.WebDriver;
 
-import com.duke.pages.AccountOverviewPage;
-import com.duke.pages.HomePage;
+import pages.AccountOverviewPage;
+import pages.HomePage;
 
 public class PageObjectManager {
 	private HomePage homePage = null;

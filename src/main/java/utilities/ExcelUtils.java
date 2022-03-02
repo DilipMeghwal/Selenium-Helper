@@ -17,7 +17,7 @@ public class ExcelUtils {
 	private String projPath = System.getProperty("user.dir");
 
 	/*
-	 * This functions is designed to read data from excel and save 
+	 * This functions is designed to read data from excel and save
 	 * that data to a hashmap that can be accessed throughout the script
 	 */
 	@SuppressWarnings("resource")
@@ -45,7 +45,7 @@ public class ExcelUtils {
 				}
 			}
 			for (int i = 0; i < columnNames.size(); i++) {
-				System.out.println("Key " + columnNames.get(i) + " Value " + rowData.get(i));
+				//System.out.println("Key " + columnNames.get(i) + " Value " + rowData.get(i));
 				testDataHashMap.put(columnNames.get(i), rowData.get(i));
 			}
 		} catch (Exception e) {
@@ -59,27 +59,27 @@ public class ExcelUtils {
 		Row row = sheet.getRow(rowNum);
 		for (Cell cell : row) {
 			switch (cell.getCellType()) {
-			case BOOLEAN:
-				rowValues.add(String.valueOf(cell.getBooleanCellValue()));
-				break;
-			case STRING:
-				rowValues.add(cell.getStringCellValue().toString());
-				break;
-			case NUMERIC:
-				if (DateUtil.isCellDateFormatted(cell)) {
-					rowValues.add(String.valueOf(cell.getDateCellValue()));
-				} else {
-					rowValues.add(String.valueOf(cell.getNumericCellValue()));
-				}
-				break;
-			case FORMULA:
-				rowValues.add(String.valueOf(cell.getCellFormula()));
-				break;
-			case BLANK:
-				rowValues.add("");
-				break;
-			default:
-				rowValues.add("");
+				case BOOLEAN:
+					rowValues.add(String.valueOf(cell.getBooleanCellValue()));
+					break;
+				case STRING:
+					rowValues.add(cell.getStringCellValue().toString());
+					break;
+				case NUMERIC:
+					if (DateUtil.isCellDateFormatted(cell)) {
+						rowValues.add(String.valueOf(cell.getDateCellValue()));
+					} else {
+						rowValues.add(String.valueOf(cell.getNumericCellValue()));
+					}
+					break;
+				case FORMULA:
+					rowValues.add(String.valueOf(cell.getCellFormula()));
+					break;
+				case BLANK:
+					rowValues.add("");
+					break;
+				default:
+					rowValues.add("");
 			}
 		}
 		return rowValues;
@@ -88,27 +88,27 @@ public class ExcelUtils {
 	public String getCellValueAsString(Cell cell) {
 		String cellValue = null;
 		switch (cell.getCellType()) {
-		case BOOLEAN:
-			cellValue = String.valueOf(cell.getBooleanCellValue());
-			break;
-		case STRING:
-			cellValue = cell.getStringCellValue().toString();
-			break;
-		case NUMERIC:
-			if (DateUtil.isCellDateFormatted(cell)) {
-				cellValue = String.valueOf(cell.getDateCellValue());
-			} else {
-				cellValue = String.valueOf(cell.getNumericCellValue());
-			}
-			break;
-		case FORMULA:
-			cellValue = String.valueOf(cell.getCellFormula());
-			break;
-		case BLANK:
-			cellValue = "";
-			break;
-		default:
-			cellValue = "";
+			case BOOLEAN:
+				cellValue = String.valueOf(cell.getBooleanCellValue());
+				break;
+			case STRING:
+				cellValue = cell.getStringCellValue().toString();
+				break;
+			case NUMERIC:
+				if (DateUtil.isCellDateFormatted(cell)) {
+					cellValue = String.valueOf(cell.getDateCellValue());
+				} else {
+					cellValue = String.valueOf(cell.getNumericCellValue());
+				}
+				break;
+			case FORMULA:
+				cellValue = String.valueOf(cell.getCellFormula());
+				break;
+			case BLANK:
+				cellValue = "";
+				break;
+			default:
+				cellValue = "";
 		}
 		return cellValue;
 	}

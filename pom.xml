@@ -13,6 +13,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
     <build>
@@ -30,12 +32,16 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <!--rerunFailingTestsCount>1</rerunFailingTestsCount-->
                     <suiteXmlFiles>
                         <suiteXmlFile>testngRunner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <extent.reporter.spark.start>true</extent.reporter.spark.start>
                         <extent.reporter.spark.out>test-output/SparkReport/Spark.html</extent.reporter.spark.out>
+                        <systeminfo.os>${os.name}</systeminfo.os>
+                        <systeminfo.user>${user.name}</systeminfo.user>
+                        <systeminfo.AppName>Para Bank</systeminfo.AppName>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -159,6 +165,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.1.0</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder -->
+        <dependency>
+            <groupId>com.github.stephenc.monte</groupId>
+            <artifactId>monte-screen-recorder</artifactId>
+            <version>0.7.7.0</version>
         </dependency>
     </dependencies>
 </project>

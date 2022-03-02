@@ -12,4 +12,4 @@ Feature: verify Login
 
     Examples: 
       | user  |
-      | user2 |
+      | user1 |

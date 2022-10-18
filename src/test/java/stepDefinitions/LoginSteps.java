@@ -1,4 +1,4 @@
-package stepDefinations;
+package stepDefinitions;
 
 import java.io.IOException;
 import java.util.HashMap;
